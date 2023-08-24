@@ -27,9 +27,12 @@
         <div class="user">
           <div class="login-username">
             <div class="login">
-              <a href="#">
-                <p>LOGIN / SIGNUP</p>
-              </a>
+              {% if user.is_authenticated %}
+              <p>{{user.username}}</p>
+              {% else %}
+              <p><a href="{% url 'account:login' %}">LOGIN</a>  / <a href="{% url 'account:signup' %}">SIGNUP</a></p>
+
+              {% endif %}
             </div>
           </div>
           <a href="#">
@@ -77,19 +80,19 @@
           <div class="box">
             <div class="title"><p>기타 졸업 요건</p></div>
             <div class="other">
-              <a href="#">
+              <a href="{% url 'semester' %}">
                 <div class="sub-box-1">
                   <p>정규 학기</p>
                 </div></a
-              ><a href="#">
+              ><a href="{% url 'gradpost' %}">
                 <div class="sub-box-1">
                   <p>졸업 유예</p>
                 </div></a
-              ><a href="#">
+              ><a href="{% url 'completion' %}">
                 <div class="sub-box-1">
                   <p>수료</p>
                 </div></a
-              ><a href="#">
+              ><a href="{% url 'earlygrad' %}">
                 <div class="sub-box-1">
                   <p>조기 졸업</p>
                 </div></a

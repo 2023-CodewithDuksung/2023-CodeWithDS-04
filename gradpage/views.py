@@ -189,3 +189,13 @@ def koreacul_department(request):
 
 def koreaedu_department(request):
     return render(request, 'gradpage/koreaedu.html')
+
+#2
+def semester(request):
+    return render(request, 'gradpage/semester.html')
+def gradpost(request):
+    return render(request, 'gradpage/gradpost.html')
+def completion(request):
+    return render(request, 'gradpage/completion.html')
+def earlygrad(request):
+    return render(request, 'gradpage/earlygrad.html')
