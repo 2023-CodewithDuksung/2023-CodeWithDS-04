@@ -6,22 +6,23 @@ from .models import Archive, Major
 def main(request):
     return render(request, 'gradpage/main.html')
 
+
+# 과기대
 def computer(request, a_id=None):
-    # if a_id is not None:
-    #     a = Archive.objects.get(id=a_id)
-    # else:
-    #     a = None
     archive_list = Archive.objects.all()
     return render(request, 'gradpage/computer.html', {'archive_list':archive_list})
 
 def itmedia_department(request):
-    return render(request, 'gradpage/itmedia.html')
+    archive_list = Archive.objects.all()
+    return render(request, 'gradpage/itmedia.html',{'archive_list':archive_list})
 
 def software_department(request):
-    return render(request, 'gradpage/software.html')
+    archive_list = Archive.objects.all()
+    return render(request, 'gradpage/software.html',{'archive_list':archive_list})
 
 def cyber_department(request):
-    return render(request, 'gradpage/cyber.html')
+    archive_list = Archive.objects.all()
+    return render(request, 'gradpage/cyber.html',{'archive_list':archive_list})
 
 def bio_department(request):
     return render(request, 'gradpage/bio.html')
@@ -72,3 +73,80 @@ def create_archiving(request):
         return redirect('computer') # 수정해야됨
 
     return render(request, 'gradpage/archiving.html')
+
+# 글로벌 융합대학 
+
+def global_view(request):
+    return render(request, 'gradpage/global.html')
+
+def china_department(request):
+    return render(request, 'gradpage/china.html')
+
+def english_department(request):
+    return render(request, 'gradpage/english.html')
+
+def france_department(request):
+    return render(request, 'gradpage/france.html')
+
+def germany_department(request):
+    return render(request, 'gradpage/germany.html')
+
+def spain_department(request):
+    return render(request, 'gradpage/spain.html')
+
+def philosophy_department(request):
+    return render(request, 'gradpage/philosophy.html')
+
+def arthistory_department(request):
+    return render(request, 'gradpage/arthistory.html')
+
+def culperson_department(request):
+    return render(request, 'gradpage/culperson.html')
+
+def manange_department(request):
+    return render(request, 'gradpage/manange.html')
+
+def account_department(request):
+    return render(request, 'gradpage/account.html')
+
+def intertrade_department(request):
+    return render(request, 'gradpage/intertrade.html')
+
+def law_department(request):
+    return render(request, 'gradpage/law.html')
+
+def social_department(request):
+    return render(request, 'gradpage/social.html')
+
+def literinf_department(request):
+    return render(request, 'gradpage/literinf.html')
+
+def psychology_department(request):
+    return render(request, 'gradpage/psychology.html')
+
+def childfam_department(request):
+    return render(request, 'gradpage/childfam.html')
+
+def socwel_department(request):
+    return render(request, 'gradpage/socwel.html')
+
+def poldiplo_department(request):
+    return render(request, 'gradpage/poldiplo.html')
+
+def fashion_department(request):
+    return render(request, 'gradpage/fashion.html')
+
+def childedu_department(request):
+    return render(request, 'gradpage/childedu.html')
+
+def japan_department(request):
+    return render(request, 'gradpage/japan.html')
+
+def korea_department(request):
+    return render(request, 'gradpage/korea.html')
+
+def history_department(request):
+    return render(request, 'gradpage/history.html')
+
+# 미대 - 아카이빙 연결
+# 약대
