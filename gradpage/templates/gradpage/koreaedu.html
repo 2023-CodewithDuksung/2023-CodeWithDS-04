@@ -17,7 +17,7 @@
         </div>
         <div class="logo">
           <a href="/">
-            <img src="{% static 'image/logo.png' %}" alt="로고" />
+            <img src="image/logo.png' %}" alt="로고" />
           </a>
         </div>
         <div class="center-line">
@@ -58,11 +58,12 @@
               </div>
               <div class="choose">
                 <form action="#" method="POST">
+                  {% csrf_token %}
                   <!-- changeDept -->
                   <select name="dept" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
-                    <option value="한국학전공">한국학전공</option>
-                    <option selected value="한국어교육전공">한국어교육전공</option>
+                    <option value="koreacul">한국학전공</option>
+                    <option selected value="koreaedu">한국어교육전공</option>
                   </select>
                   <input type="submit" value="선택" id="choose-btn" />
                 </form>

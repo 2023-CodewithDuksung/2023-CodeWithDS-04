@@ -57,8 +57,8 @@
                 <p>글로벌융합대학</p>
               </div>
               <div class="choose">
+                {% csrf_token %}
                 <form action="#" method="POST">
-                  {% csrf_token %}
                   <!-- changeDept -->
                   <select name="major" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>

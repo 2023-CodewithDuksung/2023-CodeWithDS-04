@@ -58,11 +58,12 @@
               </div>
               <div class="choose">
                 <form action="#" method="POST">
+                  {% csrf_token %}
                   <!-- changeDept -->
                   <select name="dept" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
-                    <option selected value="약학전공(신입생)">약학과(신입생)</option>
-                    <option value="약학전공(편입생)">약학과(편입생)</option>
+                    <option selected value="medical6">약학과(신입생)</option>
+                    <option value="medical4">약학과(편입생)</option>
                   </select>
                   <input type="submit" value="선택" id="choose-btn" />
                 </form>

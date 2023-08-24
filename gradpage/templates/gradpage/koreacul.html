@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업을 도와조 : 한국어교육전공(융합전공)</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
   </head>
   <body>
     <div class="container">
@@ -58,11 +58,12 @@
               </div>
               <div class="choose">
                 <form action="#" method="POST">
+                  {% csrf_token %}
                   <!-- changeDept -->
                   <select name="dept" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
-                    <option selected value="한국학전공">한국학전공</option>
-                    <option value="한국어교육전공">한국어교육전공</option>
+                    <option selected value="koreacul">한국학전공</option>
+                    <option value="koreaedu">한국어교육전공</option>
                   </select>
                   <input type="submit" value="선택" id="choose-btn" />
                 </form>
