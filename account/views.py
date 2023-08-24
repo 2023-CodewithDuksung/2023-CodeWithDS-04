@@ -5,9 +5,16 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
+from team_board.models import Board
+from share_info.models import Info
 
 def mypage(request):
-    return render(request, 'mypage.html')
+    my_team=Board.objects.filter(author=request.user)
+    my_info=Info.objects.filter(author=request.user)
+    return render(request, 'mypage.html', {
+            'my_team' : my_team,
+            'my_info' : my_info,
+    })
     
 def signup(request):  # 회원가입 함수
     if request.method == 'POST':  # 회원가입 정보 입력 후 가입하기 클릭시
