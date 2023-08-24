@@ -66,4 +66,7 @@ urlpatterns = [
     path('gradpost/', views.gradpost, name='gradpost'),
     path('completion/', views.completion, name='completion'),
     path('earlygrad/', views.earlygrad, name='earlygrad'),
+    #커뮤니티
+    path('share_info/', views.shareinfo, name='shareinfo'),
+    path('team_board/', views.teamboard, name='teamboard'),
 ]

@@ -1,15 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <h1>회원정보수정</h1>
-    <form method="post" class="post-form" action="{% url 'account:update' %}">
-      {% csrf_token %}
-      {{form.as_p}}
-      <button type="submit" value="수정하기">수정하기</button>
-    </form>
-</body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 개인정보 수정</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/update.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              {% if user.is_authenticated %}
+              <p>{{user.username}}</p>
+              {% else %}
+              <p><a href="{% url 'account:login' %}">LOGIN</a> / <a href="{% url 'account:signup' %}">SIGNUP</a></p>
+
+              {% endif %}
+            </div>
+          </div>
+          <a href="{% url 'account:mypage' %}">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
+
+      <section class="sec">
+        <div class="content">
+          <div class="content-title">
+            <p>개인정보 입력/수정</p>
+          </div>
+
+          <div class="box">
+            <form action="{% url 'account:update' %}" class="form" method="post">
+              {% csrf_token %}
+              <div class="input-box">
+                <p>ID</p>
+                <input type="text" name="username" autocomplete="username" id="username" class="input-field" placeholder="아이디를 입력해주세요." required />
+              </div>
+
+              <input id="update" type="submit" value="DONE" />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+    <script src="{% static 'js/update.js' %}"></script>
+  </body>
 </html>
