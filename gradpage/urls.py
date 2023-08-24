@@ -5,10 +5,10 @@ urlpatterns = [
     path('', views.main, name="main"),
     path('computer/', views.computer, name="computer"),
     path('createArchiving/', views.create_archiving, name='create_archiving'),
-    path('computer/itmedia/', views.itmedia_department, name='itmedia_department'),
-    # computer에서 dropdown으로 선택학과 - 아카이빙 (미대까지)
+    # computer에서 dropdown으로 선택학과 - 아카이빙 공대만 
     path('computer/software/', views.software_department, name='software_department'),
     path('computer/cyber/', views.cyber_department, name='cyber_department'),
+    path('computer/itmedia/', views.itmedia_department, name='itmedia_department'),
     # main에서 각 페이지
     path('technology/', views.technology_view, name='technology'),
     path('global/', views.global_view, name='global'),
@@ -69,4 +69,6 @@ urlpatterns = [
     #커뮤니티
     path('share_info/', views.shareinfo, name='shareinfo'),
     path('team_board/', views.teamboard, name='teamboard'),
+    #챗봇
+     path('chatbot/', views.chatbot, name='chatbot'),
 ]
