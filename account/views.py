@@ -21,7 +21,7 @@ def signup(request):  # 회원가입 함수
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('main')
+            return redirect('account:login')
     else:
         form = CustomUserCreationForm()
     return render(request, 'signup.html', {'form': form })

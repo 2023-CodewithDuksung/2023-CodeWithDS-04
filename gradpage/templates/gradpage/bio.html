@@ -101,7 +101,7 @@
       </footer>
 
       <navigation class="nav">
-        <a href="#">
+        <a href="{% url 'chatbot' %}">
           <div class="chat-button">
             <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
         ></a>
@@ -110,19 +110,3 @@
   </body>
 </html>
 
-<script>
-  document.getElementById("choose-btn").addEventListener("click", function () {
-    var selectedValue = document.getElementById("input-dropdown").value;
-
-    if (selectedValue === "computer_department") {
-      window.location.href = "computer_department/";
-    } else if (selectedValue === "itmedia") {
-      window.location.href = "itmedia/";
-    } else if (selectedValue === "software") {
-      window.location.href = "software/";
-    } else if (selectedValue === "cyber") {
-      window.location.href = "cyber/";
-    }
-    // 나머지 학과에 대한 처리도 동일하게 작성
-  });
-</script>

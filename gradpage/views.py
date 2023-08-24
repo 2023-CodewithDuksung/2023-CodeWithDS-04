@@ -8,21 +8,21 @@ def main(request):
 
 
 # 과기대
-def computer(request, a_id=None):
-    archive_list = Archive.objects.all()
-    return render(request, 'gradpage/computer.html', {'archive_list':archive_list})
+def computer(request, major_id=None):
+    archive_list = Archive.objects.filter(major = 1)
+    return render(request, 'gradpage/computer.html', {'archive_list':archive_list,'major_id': major_id})
 
-def itmedia_department(request):
-    archive_list = Archive.objects.all()
-    return render(request, 'gradpage/itmedia.html',{'archive_list':archive_list})
+def itmedia_department(request,major_id=None):
+    archive_list = Archive.objects.filter(major = 2)
+    return render(request, 'gradpage/itmedia.html',{'archive_list':archive_list,'major_id': major_id})
 
-def software_department(request):
-    archive_list = Archive.objects.all()
-    return render(request, 'gradpage/software.html',{'archive_list':archive_list})
+def software_department(request,major_id=None):
+    archive_list = Archive.objects.filter(major = 3)
+    return render(request, 'gradpage/software.html',{'archive_list':archive_list,'major_id': major_id})
 
-def cyber_department(request):
-    archive_list = Archive.objects.all()
-    return render(request, 'gradpage/cyber.html',{'archive_list':archive_list})
+def cyber_department(request,major_id=None):
+    archive_list = Archive.objects.filter(major = 4)
+    return render(request, 'gradpage/cyber.html',{'archive_list':archive_list,'major_id': major_id})
 
 def bio_department(request):
     return render(request, 'gradpage/bio.html')
@@ -204,3 +204,6 @@ def shareinfo(request):
     return render(request, 'share_info/shareinfo.html')
 def teamboard(request):
     return render(request, 'team_board/community.html')
+
+def chatbot(request):
+    return render(request, 'chatbot.html')
