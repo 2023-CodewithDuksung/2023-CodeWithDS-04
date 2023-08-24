@@ -104,7 +104,7 @@ def culperson_department(request):
     return render(request, 'gradpage/culperson.html')
 
 def manange_department(request):
-    return render(request, 'gradpage/manange.html')
+    return render(request, 'gradpage/manage.html')
 
 def account_department(request):
     return render(request, 'gradpage/account.html')

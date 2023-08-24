@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업을 도와조 : 수학</title>
-
-    <link rel="stylesheet" href="./css/global.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
   </head>
   <body>
     <div class="container">
@@ -16,8 +16,8 @@
           <hr />
         </div>
         <div class="logo">
-          <a href="#">
-            <img src="image/logo.png" alt="로고" />
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
           </a>
         </div>
         <div class="center-line">
@@ -35,7 +35,7 @@
           <a href="#">
             <div class="profile">
               <p>MYPAGE</p>
-              <img src="./image/user.png" alt="프로필" /></div
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
           ></a>
         </div>
         <div class="right-line">
@@ -57,7 +57,9 @@
                 <p>과학기술대학</p>
               </div>
               <div class="choose">
-                <form action="#" method="POST">
+                {% comment %}
+                <form action="{% url 'select_department'%}" method="POST">
+                  {% csrf_token %} {% endcomment %}
                   <!-- changeDept -->
                   <select name="dept-tech" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
@@ -73,7 +75,9 @@
                     <option selected value="math">수학전공</option>
                   </select>
                   <input type="submit" value="선택" id="choose-btn" />
+                  {% comment %}
                 </form>
+                {% endcomment %}
               </div>
             </div>
           </div>
@@ -104,7 +108,7 @@
       <navigation class="nav">
         <a href="#">
           <div class="chat-button">
-            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
         ></a>
       </navigation>
     </div>
