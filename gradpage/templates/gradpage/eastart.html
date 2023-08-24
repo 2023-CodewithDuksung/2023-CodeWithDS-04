@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업을 도와조 : 동양화전공</title>
-
-    <link rel="stylesheet" href="./css/global.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
   </head>
   <body>
     <div class="container">
@@ -16,8 +16,8 @@
           <hr />
         </div>
         <div class="logo">
-          <a href="#">
-            <img src="image/logo.png" alt="로고" />
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
           </a>
         </div>
         <div class="center-line">
@@ -35,7 +35,7 @@
           <a href="#">
             <div class="profile">
               <p>MYPAGE</p>
-              <img src="./image/user.png" alt="프로필" /></div
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
           ></a>
         </div>
         <div class="right-line">
@@ -58,6 +58,7 @@
               </div>
               <div class="choose">
                 <form action="#" method="POST">
+                  {% csrf_token %}
                   <!-- changeDept -->
                   <select name="dept-art" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
@@ -93,7 +94,7 @@
               </div>
               <div class="contentbox-2">
                 <div class="grad-img">
-                  <img src="./image/grad/korea_paint.jpg" alt="전시회 이미지" />
+                  <img src="{% static 'image/grad/korea_paint.jpg' %}" alt="전시회 이미지" />
                 </div>
                 <div class="grad-text">
                   <p style="font-size: 1.1em; font-weight: bold">제 37회 졸업전시회</p>
@@ -111,29 +112,19 @@
           <div class="box">
             졸업 작품 아카이브
             <!-- 아카이빙 -->
+            {% if archive_list %} {% for archive in archive_list %}
             <div class="contentbox-3">
               <div class="grad-img">
-                <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
+                <img src="{{ archive.image.url }}" alt="{{ archive.exhibit_title }}" />
               </div>
               <div class="grad-text">
-                <p style="font-size: 1.1em; font-weight: bold">제 32회 졸업전시회</p>
-                <p style="margin-top: 20px">SHORT</p>
-                <p>WRC (김윤수 김은지 최은지 민상은)</p>
-                <p style="margin-top: 20px">북마크 및 즐겨찾기가 필요한 링크 또는 이미지를 한 눈에 요약해주고, 필요하면 노트식으로 정리해주는 웹 서비스</p>
+                <p style="font-size: 1.1em; font-weight: bold">{{ archive.exhibit_title }}</p>
+                <p style="margin-top: 20px">{{ archive.service_title }}</p>
+                <p>{{ archive.team_name }} ({{ archive.team_member }})</p>
+                <p style="margin-top: 20px">{{ archive.description }}</p>
               </div>
             </div>
-            <!-- 아카이빙 -->
-            <div class="contentbox-3">
-              <div class="grad-img">
-                <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
-              </div>
-              <div class="grad-text">
-                <p style="font-size: 1.1em; font-weight: bold">제 32회 졸업전시회</p>
-                <p style="margin-top: 20px">SHORT</p>
-                <p>WRC (김윤수 김은지 최은지 민상은)</p>
-                <p style="margin-top: 20px">북마크 및 즐겨찾기가 필요한 링크 또는 이미지를 한 눈에 요약해주고, 필요하면 노트식으로 정리해주는 웹 서비스</p>
-              </div>
-            </div>
+            {% endfor %} {% endif %}
 
             <!-- 아카이빙 버튼 -->
             <a href="{% url 'create_archiving' %}">
@@ -153,7 +144,7 @@
       <navigation class="nav">
         <a href="#">
           <div class="chat-button">
-            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
         ></a>
       </navigation>
     </div>
