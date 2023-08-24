@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업을 도와조 : 사학전공</title>
-
-    <link rel="stylesheet" href="./css/page_global.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
   </head>
   <body>
     <div class="container">
@@ -16,8 +16,8 @@
           <hr />
         </div>
         <div class="logo">
-          <a href="#">
-            <img src="image/logo.png" alt="로고" />
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
           </a>
         </div>
         <div class="center-line">
@@ -35,7 +35,7 @@
           <a href="#">
             <div class="profile">
               <p>MYPAGE</p>
-              <img src="./image/user.png" alt="프로필" /></div
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
           ></a>
         </div>
         <div class="right-line">
@@ -58,32 +58,33 @@
               </div>
               <div class="choose">
                 <form action="#" method="POST">
+                  {% csrf_token %}
                   <!-- changeDept -->
-                  <select name="dept" id="input-dropdown">
-                    <option disabled value="">전공을 선택해주세요. ▼</option>
-                    <option value="korea">국어국문학전공</option>
-                    <option value="japan">일어일문학전공</option>
-                    <option value="china">중어중문학전공</option>
-                    <option value="english">영어영문학전공</option>
-                    <option value="france">불어불문학전공</option>
-                    <option value="germany">독어독문학전공</option>
-                    <option value="spain">스페인어전공</option>
-                    <option selected value="history">사학전공</option>
-                    <option value="philosophy">철학전공</option>
-                    <option value="arthistory">미술사학전공</option>
-                    <option value="culperson">문화인류학전공</option>
-                    <option value="manange">경영학전공</option>
-                    <option value="account">회계학전공</option>
-                    <option value="intertrade">국제통상학전공</option>
-                    <option value="law">법학전공</option>
-                    <option value="social">사회학전공</option>
-                    <option value="literinf">문헌정보학전공</option>
-                    <option value="psychology">심리학전공</option>
-                    <option value="childfam">아동가족학전공</option>
-                    <option value="socwel">사회복지학전공</option>
-                    <option value="poldiplo">정치외교학전공</option>
-                    <option value="fashion">의상디자인학전공</option>
-                    <option value="childedu">유아교육과</option>
+                  <select name="major" id="input-dropdown">
+                  <option disabled value="">전공을 선택해주세요. ▼</option>
+                  <option value="국어국문학전공">국어국문학전공</option>
+                  <option value="일어일문학전공">일어일문학전공</option>
+                  <option value="중어중문학전공">중어중문학전공</option>
+                  <option value="영어영문학전공">영어영문학전공</option>
+                  <option value="불어불문학전공">불어불문학전공</option>
+                  <option value="독어독문학전공">독어독문학전공</option>
+                  <option value="스페인어전공">스페인어전공</option>
+                  <option selected value="사학전공">사학전공</option>
+                  <option value="철학전공">철학전공</option>
+                  <option value="미술사학전공">미술사학전공</option>
+                  <option value="문화인류학전공">문화인류학전공</option>
+                  <option value="경영학전공">경영학전공</option>
+                  <option value="회계학전공">회계학전공</option>
+                  <option value="국제통상학전공">국제통상학전공</option>
+                  <option value="법학전공">법학전공</option>
+                  <option value="사회학전공">사회학전공</option>
+                  <option value="문헌정보학전공">문헌정보학전공</option>
+                  <option value="심리학전공">심리학전공</option>
+                  <option value="아동가족학전공">아동가족학전공</option>
+                  <option value="사회복지학전공">사회복지학전공</option>
+                  <option value="정치외교학전공">정치외교학전공</option>
+                  <option value="의상디자인학전공">의상디자인학전공</option>
+                  <option value="유아교육과">유아교육과</option>
                   </select>
                   <input type="submit" value="선택" id="choose-btn" />
                 </form>
@@ -119,7 +120,7 @@
       <navigation class="nav">
         <a href="#">
           <div class="chat-button">
-            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+            <img src="{% static 'js/preview-file.js' %}" alt="챗봇" /></div
         ></a>
       </navigation>
     </div>
