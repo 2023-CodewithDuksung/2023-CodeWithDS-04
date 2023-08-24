@@ -64,33 +64,18 @@
                 </div>
                 <div class="post-write-box">
                   <!-- 쓴 글 하나 -->
-                  <a href="#">
+                  {% if my_info.exists %} {% for i in my_info %}
+                  <a href="{{ i.get_absolute_url }}">
                     <div class="post-write">
-                      <p>(제목 표시)</p>
-                      <p>2023.08.20</p>
+                      <p>{{i.title}}</p>
+                      <p>{{i.pub_date}}</p>
                     </div>
                   </a>
-                  <!-- 쓴 글 하나 -->
-                  <a href="#">
-                    <div class="post-write">
-                      <p>(제목 표시)</p>
-                      <p>2023.08.20</p>
-                    </div>
-                  </a>
-                  <!-- 쓴 글 하나 -->
-                  <a href="#">
-                    <div class="post-write">
-                      <p>(제목 표시)</p>
-                      <p>2023.08.20</p>
-                    </div>
-                  </a>
-                  <!-- 쓴 글 하나 -->
-                  <a href="#">
-                    <div class="post-write">
-                      <p>(제목 표시)</p>
-                      <p>2023.08.20</p>
-                    </div>
-                  </a>
+                  {% endfor %}
+                  <!-- 쓴 글 end -->
+                  {% else %}
+                  <p style="margin: 15px 0">아무 게시물이 없습니다.</p>
+                  {% endif %}
                 </div>
               </div>
             </div>

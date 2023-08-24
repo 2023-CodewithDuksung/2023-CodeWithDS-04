@@ -19,6 +19,9 @@ class Board(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return f'team_board/{self.pk}'
+
 class Reply(models.Model):
     """
     reply: Reply -> Board 연결관계
