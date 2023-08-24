@@ -70,5 +70,5 @@ urlpatterns = [
     path('share_info/', views.shareinfo, name='shareinfo'),
     path('team_board/', views.teamboard, name='teamboard'),
     #챗봇
-     path('chatbot/', views.chatbot, name='chatbot'),
+    path('chatbot/', views.chatbot, name='chatbot'),
 ]
