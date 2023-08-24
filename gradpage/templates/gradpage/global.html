@@ -1,10 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 글로벌융합대학</title>
 
-</body>
+    <link rel="stylesheet" href="./css/dept.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="#">
+            <img src="./image/logo.png" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="./image/user.png" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
+
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>글로벌융합대학</p>
+              <p style="font-size: 1.7em">Colleage of Humanities and Social Science</p>
+            </div>
+            <div class="select-dept">
+              <div class="univ-name">
+                <p>글로벌융합대학</p>
+              </div>
+              <div class="choose">
+                <form action="#" method="POST">
+                  <!-- changeDept -->
+                  <select name="dept" id="input-dropdown">
+                    <option selected disabled value="">전공을 선택해주세요. ▼</option>
+                    <option value="korea">국어국문학전공</option>
+                    <option value="japan">일어일문학전공</option>
+                    <option value="china">중어중문학전공</option>
+                    <option value="english">영어영문학전공</option>
+                    <option value="france">불어불문학전공</option>
+                    <option value="germany">독어독문학전공</option>
+                    <option value="spain">스페인어전공</option>
+                    <option value="history">사학전공</option>
+                    <option value="philosophy">철학전공</option>
+                    <option value="arthistory">미술사학전공</option>
+                    <option value="culperson">문화인류학전공</option>
+                    <option value="manange">경영학전공</option>
+                    <option value="account">회계학전공</option>
+                    <option value="intertrade">국제통상학전공</option>
+                    <option value="law">법학전공</option>
+                    <option value="social">사회학전공</option>
+                    <option value="literinf">문헌정보학전공</option>
+                    <option value="psychology">심리학전공</option>
+                    <option value="childfam">아동가족학전공</option>
+                    <option value="socwel">사회복지학전공</option>
+                    <option value="poldiplo">정치외교학전공</option>
+                    <option value="fashion">의상디자인학전공</option>
+                    <option value="childedu">유아교육과</option>
+                  </select>
+                  <input type="submit" value="선택" id="choose-btn" />
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- 버튼 (1) -->
+          <div class="dept-btn-1">
+            <a href="{%url 'korea_department'%}">
+              <div class="sub-box">
+                <p>국어국문학전공</p>
+              </div></a
+            ><a href="{%url 'japan_department'%}">
+              <div class="sub-box">
+                <p>일어일문학전공</p>
+              </div></a
+            ><a href="{%url 'china_department'%}">
+              <div class="sub-box">
+                <p>중어중문학전공</p>
+              </div></a
+            ><a href="{%url 'english_department'%}">
+              <div class="sub-box">
+                <p>영어영문학전공</p>
+              </div></a
+            ><a href="{%url 'france_department'%}">
+              <div class="sub-box">
+                <p>불어불문학전공</p>
+              </div></a
+            >
+          </div>
+          <!-- 버튼 (2) -->
+          <div class="dept-btn-1">
+            <a href="{%url 'germany_department'%}">
+              <div class="sub-box">
+                <p>독어독문학전공</p>
+              </div></a
+            ><a href="{%url 'spain_department'%}">
+              <div class="sub-box">
+                <p>스페인어전공</p>
+              </div></a
+            ><a href="{%url 'history_department'%}">
+              <div class="sub-box">
+                <p>사학전공</p>
+              </div></a
+            ><a href="{%url 'philosophy_department'%}">
+              <div class="sub-box">
+                <p>철학전공</p>
+              </div></a
+            ><a href="{%url 'arthistory_department'%}">
+              <div class="sub-box">
+                <p>미술사학전공</p>
+              </div></a
+            >
+          </div>
+          <!-- 버튼 (3) -->
+          <div class="dept-btn-1">
+            <a href="{%url 'culperson_department'%}">
+              <div class="sub-box">
+                <p>문화인류학전공</p>
+              </div></a
+            ><a href="{%url 'manange_department'%}">
+              <div class="sub-box">
+                <p>경영학전공</p>
+              </div></a
+            ><a href="{%url 'account_department'%}">
+              <div class="sub-box">
+                <p>회계학전공</p>
+              </div></a
+            ><a href="{%url 'intertrade_department'%}">
+              <div class="sub-box">
+                <p>국제통상학전공</p>
+              </div></a
+            ><a href="{%url 'law_department'%}">
+              <div class="sub-box">
+                <p>법학전공</p>
+              </div></a
+            >
+          </div>
+          <!-- 버튼 (4) -->
+          <div class="dept-btn-1">
+            <a href="{%url 'social_department'%}">
+              <div class="sub-box">
+                <p>사회학전공</p>
+              </div></a
+            ><a href="{%url 'literinf_department'%}">
+              <div class="sub-box">
+                <p>문헌정보학전공</p>
+              </div></a
+            ><a href="{%url 'psychology_department'%}">
+              <div class="sub-box">
+                <p>심리학전공</p>
+              </div></a
+            ><a href="{%url 'childfam_department'%}">
+              <div class="sub-box">
+                <p>아동가족학전공</p>
+              </div></a
+            ><a href="{%url 'socwel_department'%}">
+              <div class="sub-box">
+                <p>사회복지학전공</p>
+              </div></a
+            >
+          </div>
+          <!-- 버튼 (5) -->
+          <div class="dept-btn-1">
+            <a href="{%url 'poldiplo_department'%}">
+              <div class="sub-box">
+                <p>정치외교학전공</p>
+              </div></a
+            ><a href="{%url 'fashion_department'%}">
+              <div class="sub-box">
+                <p>의상디자인전공</p>
+              </div></a
+            ><a href="{%url 'childedu_department'%}">
+              <div class="sub-box">
+                <p>유아교육과</p>
+              </div></a
+            >
+            <div class="sub-box-2">
+              <p></p>
+            </div>
+            <div class="sub-box-2">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
 </html>
