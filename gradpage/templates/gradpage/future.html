@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="kor">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>졸업을 도와조 : 미래인재대학</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dept.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="hd">
+        <div class="left-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="logo">
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          </a>
+        </div>
+        <div class="center-line">
+          <hr />
+          <hr />
+        </div>
+        <div class="user">
+          <div class="login-username">
+            <div class="login">
+              <a href="#">
+                <p>LOGIN / SIGNUP</p>
+              </a>
+            </div>
+          </div>
+          <a href="#">
+            <div class="profile">
+              <p>MYPAGE</p>
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+          ></a>
+        </div>
+        <div class="right-line">
+          <hr />
+          <hr />
+        </div>
+      </header>
+
+      <section class="sec">
+        <div class="content">
+          <div class="dept">
+            <!-- 대학 정보 -->
+            <div class="univ">
+              <p>미래인재대학</p>
+              <p style="font-size: 1.7em">Colleage of Future Talents Development</p>
+            </div>
+          </div>
+          <!-- 버튼 (1) -->
+          <div class="dept-btn-1">
+            <a href="#">
+              <div class="sub-box">
+                <p>한국학전공</p>
+              </div></a
+            ><a href="#">
+              <div class="sub-box">
+                <p>한국어교육전공</p>
+              </div></a
+            >
+            <div class="sub-box-2">
+              <p></p>
+            </div>
+            <div class="sub-box-2">
+              <p></p>
+            </div>
+            <div class="sub-box-2">
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="ft">
+        <hr />
+        <hr />
+      </footer>
+
+      <navigation class="nav">
+        <a href="#">
+          <div class="chat-button">
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
+        ></a>
+      </navigation>
+    </div>
+  </body>
+</html>
