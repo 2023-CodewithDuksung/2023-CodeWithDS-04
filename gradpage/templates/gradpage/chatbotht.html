@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업을 도와조 : 챗봇</title>
-
-    <link rel="stylesheet" href="./css/chatbotht.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/chatbotht.css' %}" />
   </head>
   <body>
     <div class="container">
@@ -16,8 +16,8 @@
           <hr />
         </div>
         <div class="logo">
-          <a href="#">
-            <img src="./image/logo.png" alt="로고" />
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
           </a>
         </div>
         <div class="center-line">
@@ -27,15 +27,18 @@
         <div class="user">
           <div class="login-username">
             <div class="login">
-              <a href="#">
-                <p>LOGIN / SIGNUP</p>
-              </a>
+              {% if user.is_authenticated %}
+              <p>{{user.username}}</p>
+              {% else %}
+              <p><a href="{% url 'account:login' %}">LOGIN</a> / <a href="{% url 'account:signup' %}">SIGNUP</a></p>
+
+              {% endif %}
             </div>
           </div>
-          <a href="#">
+          <a href="{% url 'account:mypage' %}">
             <div class="profile">
               <p>MYPAGE</p>
-              <img src="./image/user.png" alt="프로필" /></div
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
           ></a>
         </div>
         <div class="right-line">
@@ -53,7 +56,7 @@
 
             <div class="chat-first">
               <div class="chat-img">
-                <img src="./image/speech-bubble.png" alt="챗봇" />
+                <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" />
               </div>
               <div class="chat-comment">
                 <p>안녕하세요! 궁금한 것을 물어보세요.</p>
@@ -62,7 +65,7 @@
 
             <div class="chats">
               <!-- 질문 & 답변 -->
-              <div class="chat-mine">
+              <!-- <div class="chat-mine">
                 <div class="chat-comment-2">
                   <p>질문입니다.</p>
                 </div>
@@ -72,36 +75,11 @@
                 <div class="chat-comment-2">
                   <p>답변입니다.</p>
                 </div>
-              </div>
-
-              <!-- 질문 & 답변 -->
-              <div class="chat-mine">
-                <div class="chat-comment-2">
-                  <p>질문입니다.</p>
-                </div>
-              </div>
-
-              <div class="chat-ans">
-                <div class="chat-comment-2">
-                  <p>답변입니다.</p>
-                </div>
-              </div>
-
-              <!-- 질문 & 답변 -->
-              <div class="chat-mine">
-                <div class="chat-comment-2">
-                  <p>질문입니다.</p>
-                </div>
-              </div>
-
-              <div class="chat-ans">
-                <div class="chat-comment-2">
-                  <p>답변입니다.</p>
-                </div>
-              </div>
+              </div> -->
             </div>
 
             <form action="#" class="form">
+              {% csrf_token %}
               <input type="text" name="" id="comment-text" placeholder="문의사항을 입력해주세요." />
               <input type="submit" value="완료" class="submit-button" />
             </form>
@@ -115,12 +93,12 @@
       </footer>
 
       <navigation class="nav">
-        <a href="#">
+        <a href="{%url 'chatbot'%}">
           <div class="chat-button">
-            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+            <img src="{% static 'image/speech-bubble.png' %" alt="챗봇" /></div
         ></a>
       </navigation>
     </div>
-    <script src="./js/preview-file.js"></script>
+    <script src="{% static 'js/preview-file.js' %}"></script>
   </body>
 </html>
