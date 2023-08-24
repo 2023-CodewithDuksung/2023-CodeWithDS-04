@@ -53,31 +53,7 @@
             <p style="font-size: 1.7em">Colleage of Science and Technology</p>
             </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                const form = document.getElementById('dept-form');
-                const dropdown = document.getElementById('input-dropdown');
-        
-                form.addEventListener('submit', function(event) {
-                    event.preventDefault();  // 폼 제출을 막음
-        
-                    const selectedOption = dropdown.value;
-                    if (selectedOption === 'computer') {
-                        window.location.href = "{% url 'computer' %}";  // 컴퓨터공학전공 페이지로 이동
-                    } else if (selectedOption === 'itmedia') {
-                        window.location.href = "{% url 'itmedia_department' %}";  // IT미디어과 페이지로 이동
-                    } else if (selectedOption === 'bio') {
-                        window.location.href = "{% url 'bio_department' %}";  // 바이오공학전공 페이지로 이동
-                    } else if (selectedOption === 'cyber') {
-                        window.location.href = "{% url 'cyber_department' %}";  // 사이버보안전공 페이지로 이동
-                    } else if (selectedOption === 'software') {
-                        window.location.href = "{% url 'software_department' %}";  // 소프트웨어전공 페이지로 이동
-                    } else if (selectedOption === 'sports') {
-                        window.location.href = "{% url 'sports_department' %}";  // 생활체육학전공 페이지로 이동
-                    } // 나머지 전공에 대한 처리도 추가하실 수 있습니다.
-                });
-            });
-        </script>
+
         <!-- 버튼 (1) -->
         <div class="dept-btn-1">
             <a href="{%url 'computer'%}">
@@ -89,10 +65,19 @@
                 <p>IT미디어공학전공</p>
             </div></a
             >
+<<<<<<< HEAD
+            <a href="{% url 'bio_department' %}">
+                <div class="sub-box-1">
+                    <p>바이오공학전공</p>
+                </div>
+            </a>
+            
+=======
             <a href="#">
                 <div class="sub-box">
                     <p>바이오공학전공</p>
                 </div></a>
+>>>>>>> b3e7d14bc7e5c71dacdb0032e5aa23d16657cab1
             </a
             ><a href="{% url 'cyber_department' %}">
             <div class="sub-box">
