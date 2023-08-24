@@ -61,5 +61,9 @@ urlpatterns = [
     # future 글씨 선택학과
     path('future/koreacul_department/', views.koreacul_department, name='koreacul_department'),
     path('future/koreaedu_department/', views.koreaedu_department, name='koreaedu_department'),
-
+    #2
+    path('semester/', views.semester, name='semester'),
+    path('gradpost/', views.gradpost, name='gradpost'),
+    path('completion/', views.completion, name='completion'),
+    path('earlygrad/', views.earlygrad, name='earlygrad'),
 ]

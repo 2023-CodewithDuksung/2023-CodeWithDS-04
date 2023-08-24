@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>회원정보수정</h1>
+    <form method="post" class="post-form" action="{% url 'account:update' %}">
+      {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" value="수정하기">수정하기</button>
+    </form>
+</body>
+</html>

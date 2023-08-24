@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" class="post-form" action="{% url 'account:signup' %}">
+      {% csrf_token %}
+      {{form.as_p}}
+      <button type="submit" class="btn btn-primary">생성하기</button>
+    </form>
+    <a href="{% url 'main' %}">목록보기</a>
+</body>
+</html>
