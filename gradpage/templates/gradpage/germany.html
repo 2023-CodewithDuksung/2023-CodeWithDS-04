@@ -58,8 +58,9 @@
               </div>
               <div class="choose">
                 <form action="#" method="POST">
+                  {% csrf_token %}
                   <!-- changeDept -->
-                  <select name="dept" id="input-dropdown">
+                  <select name="major" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
                     <option value="korea">국어국문학전공</option>
                     <option value="japan">일어일문학전공</option>
@@ -116,7 +117,7 @@
       <navigation class="nav">
         <a href="#">
           <div class="chat-button">
-            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
         ></a>
       </navigation>
     </div>
