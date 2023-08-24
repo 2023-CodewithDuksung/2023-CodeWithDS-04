@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업을 도와조 : 컴퓨터공학</title>
-
-    <link rel="stylesheet" href="./css/global.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" />
   </head>
   <body>
     <div class="container">
@@ -16,8 +16,8 @@
           <hr />
         </div>
         <div class="logo">
-          <a href="#">
-            <img src="image/logo.png" alt="로고" />
+          <a href="/">
+            <img src="{% static 'image/logo.png' %}" alt="로고" />
           </a>
         </div>
         <div class="center-line">
@@ -35,7 +35,7 @@
           <a href="#">
             <div class="profile">
               <p>MYPAGE</p>
-              <img src="./image/user.png" alt="프로필" /></div
+              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
           ></a>
         </div>
         <div class="right-line">
@@ -57,8 +57,9 @@
                 <p>과학기술대학</p>
               </div>
               <div class="choose">
-                {% comment %} <form action="{% url 'select_department'%}" method="POST">
-                    {% csrf_token %} {% endcomment %}
+                {% comment %}
+                <form action="{% url 'select_department'%}" method="POST">
+                  {% csrf_token %} {% endcomment %}
                   <!-- changeDept -->
                   <select name="dept-tech" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
@@ -74,7 +75,9 @@
                     <option value="math">수학전공</option>
                   </select>
                   <input type="submit" value="선택" id="choose-btn" />
-                {% comment %} </form> {% endcomment %}
+                  {% comment %}
+                </form>
+                {% endcomment %}
               </div>
             </div>
           </div>
@@ -99,21 +102,19 @@
             <div class="contents">
               <div class="contentbox-2">
                 <div class="grad-img">
-                  <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
+                  <img src="{% static 'image/grad/WISCOM(2021).jpg' %}" alt="전시회 이미지" />
                 </div>
                 <div class="grad-text">
-                  <p style="font-size: 1.2em; font-weight: bold">제 32회 졸업전시회</p>
+                  <p style="font-size: 1.2em; font-weight: bold">제 31회 졸업전시회</p>
                   <p style="font-weight: bold; margin-top: 5px">장소</p>
-                  <p>덕성여자대학교 쌍문근화캠퍼스 도서관 오스카라운지</p>
+                  <p>구글 클래스룸(온라인)</p>
                   <p style="font-weight: bold; margin-top: 5px">일시</p>
-                  <p>11.16 WED ~ 11.17 THUR 10:00~18:00</p>
-                  <p style="font-weight: bold; margin-top: 5px">온라인 전시회</p>
-                  <a href="http://www.dswuwis.com"><p>http://www.dswuwis.com</p></a>
+                  <p>11.24 WED ~ 11.26 FRI 10:00~16:00</p>
                 </div>
               </div>
               <div class="contentbox-2">
                 <div class="grad-img">
-                  <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
+                  <img src="{% static 'image/grad/WISCOM.jpg' %}" alt="전시회 이미지" />
                 </div>
                 <div class="grad-text">
                   <p style="font-size: 1.1em; font-weight: bold">제 32회 졸업전시회</p>
@@ -131,48 +132,25 @@
           <div class="box">
             졸업 작품 아카이브
             <!-- 아카이빙 -->
+            {% if archive_list %} {% for archive in archive_list %}
             <div class="contentbox-3">
               <div class="grad-img">
-                <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
+                <img src="{{ archive.image.url }}" alt="{{ archive.exhibit_title }}" />
               </div>
               <div class="grad-text">
-                <p style="font-size: 1.1em; font-weight: bold">제 32회 졸업전시회</p>
-                <p style="margin-top: 20px">SHORT</p>
-                <p>WRC (김윤수 김은지 최은지 민상은)</p>
-                <p style="margin-top: 20px">북마크 및 즐겨찾기가 필요한 링크 또는 이미지를 한 눈에 요약해주고, 필요하면 노트식으로 정리해주는 웹 서비스</p>
+                <p style="font-size: 1.1em; font-weight: bold">{{ archive.exhibit_title }}</p>
+                <p style="margin-top: 20px">{{ archive.service_title }}</p>
+                <p>{{ archive.team_name }} ({{ archive.team_member }})</p>
+                <p style="margin-top: 20px">{{ archive.description }}</p>
               </div>
             </div>
-            <!-- 아카이빙 -->
-            <div class="contentbox-3">
-              <div class="grad-img">
-                <img src="./image/grad/WISCOM.jpg" alt="전시회 이미지" />
-              </div>
-              <div class="grad-text">
-                <p style="font-size: 1.1em; font-weight: bold">제 32회 졸업전시회</p>
-                <p style="margin-top: 20px">SHORT</p>
-                <p>WRC (김윤수 김은지 최은지 민상은)</p>
-                <p style="margin-top: 20px">북마크 및 즐겨찾기가 필요한 링크 또는 이미지를 한 눈에 요약해주고, 필요하면 노트식으로 정리해주는 웹 서비스</p>
-              </div>
-            </div>
-
+            {% endfor %} {% endif %}
             <!-- 아카이빙 버튼 -->
             <a href="{% url 'create_archiving' %}">
               <div class="contentbox-btn">
                 <p>+</p>
               </div>
             </a>
-            {% if archive_list %}
-            {% for archive in archive_list %}
-            <div class="archiving-info">
-                <p>전시회 이름: {{ archive.exhibit_title }}</p>
-                <p>서비스 이름: {{ archive.service_title }}</p>
-                <p>팀명: {{ archive.team_name }}</p>
-                <p>팀원: {{ archive.team_member }}</p>
-                <p>설명: {{ archive.description }}</p>
-                <p>사진: <img src="{{ archive.image.url }}" alt="{{ archive.exhibit_title }}" /></p>
-            </div>
-            {% endfor %}
-            {% endif %}
           </div>
         </div>
       </section>
@@ -185,27 +163,26 @@
       <navigation class="nav">
         <a href="#">
           <div class="chat-button">
-            <img src="./image/speech-bubble.png" alt="챗봇" /></div
+            <img src="{% static 'image/speech-bubble.png' %}" alt="챗봇" /></div
         ></a>
       </navigation>
     </div>
   </body>
 </html>
 
-  <script>
-    document.getElementById("choose-btn").addEventListener("click", function() {
-      var selectedValue = document.getElementById("input-dropdown").value;
-      
-      if (selectedValue === "computer_department") {
-        window.location.href = "computer_department/";
-      } else if (selectedValue === "itmedia") {
-        window.location.href = "itmedia/";
-      } else if (selectedValue === "software") {
-        window.location.href = "software/";
-      } else if (selectedValue === "cyber") {
-        window.location.href = "cyber/";
-      }
-      // 나머지 학과에 대한 처리도 동일하게 작성
-    });
-  </script>
-  
+<script>
+  document.getElementById("choose-btn").addEventListener("click", function () {
+    var selectedValue = document.getElementById("input-dropdown").value;
+
+    if (selectedValue === "computer_department") {
+      window.location.href = "computer_department/";
+    } else if (selectedValue === "itmedia") {
+      window.location.href = "itmedia/";
+    } else if (selectedValue === "software") {
+      window.location.href = "software/";
+    } else if (selectedValue === "cyber") {
+      window.location.href = "cyber/";
+    }
+    // 나머지 학과에 대한 처리도 동일하게 작성
+  });
+</script>
