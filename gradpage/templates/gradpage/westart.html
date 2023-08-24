@@ -119,7 +119,7 @@
           <div class="box">
             졸업 작품 아카이브
             <!-- 아카이빙 -->
-            <{% if archive_list %} {% for archive in archive_list %}
+            {% if archive_list %} {% for archive in archive_list %}
             <div class="contentbox-3">
               <div class="grad-img">
                 <img src="{{ archive.image.url }}" alt="{{ archive.exhibit_title }}" />

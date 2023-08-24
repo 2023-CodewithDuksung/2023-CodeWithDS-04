@@ -199,3 +199,8 @@ def completion(request):
     return render(request, 'gradpage/completion.html')
 def earlygrad(request):
     return render(request, 'gradpage/earlygrad.html')
+# 커뮤니티
+def shareinfo(request):
+    return render(request, 'share_info/shareinfo.html')
+def teamboard(request):
+    return render(request, 'team_board/community.html')

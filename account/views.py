@@ -6,6 +6,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 
+def mypage(request):
+    return render(request, 'mypage.html')
+    
 def signup(request):  # 회원가입 함수
     if request.method == 'POST':  # 회원가입 정보 입력 후 가입하기 클릭시
         form = CustomUserCreationForm(request.POST)
