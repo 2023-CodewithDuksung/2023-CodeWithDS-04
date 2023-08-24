@@ -28,9 +28,12 @@
         <div class="user">
           <div class="login-username">
             <div class="login">
-              <a href="#">
-                <p>LOGIN / SIGNUP</p>
-              </a>
+              {% if user.is_authenticated %}
+              <p>{{user.username}}</p>
+              {% else %}
+              <p><a href="{% url 'account:login' %}">LOGIN</a> / <a href="{% url 'account:signup' %}">SIGNUP</a></p>
+
+              {% endif %}
             </div>
           </div>
           <a href="#">
