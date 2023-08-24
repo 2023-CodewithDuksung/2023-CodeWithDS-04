@@ -149,4 +149,43 @@ def history_department(request):
     return render(request, 'gradpage/history.html')
 
 # 미대 - 아카이빙 연결
+def art_view(request):
+    return render(request, 'gradpage/art.html')
+
+def eastart_department(request):
+    archive_list = Archive.objects.all()
+    return render(request, 'gradpage/eastart.html')
+
+def westart_department(request):
+    archive_list = Archive.objects.all()
+    return render(request, 'gradpage/westart.html')
+
+def visual_department(request):
+    archive_list = Archive.objects.all()
+    return render(request, 'gradpage/visual.html')
+
+def interior_department(request):
+    archive_list = Archive.objects.all()
+    return render(request, 'gradpage/interior.html')
+
+def textile_department(request):
+    archive_list = Archive.objects.all()
+    return render(request, 'gradpage/textile.html')
 # 약대
+def medi_view(request):
+    return render(request, 'gradpage/medi.html')
+
+def medical4_department(request):
+    return render(request, 'gradpage/medical4.html')
+
+def medical6_department(request):
+    return render(request, 'gradpage/medical6.html')
+# 미래대학
+def future_view(request):
+    return render(request, 'gradpage/future.html')
+
+def koreacul_department(request):
+    return render(request, 'gradpage/koreacul.html')
+
+def koreaedu_department(request):
+    return render(request, 'gradpage/koreaedu.html')
