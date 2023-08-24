@@ -9,8 +9,12 @@ urlpatterns = [
     # computer에서 dropdown으로 선택학과 - 아카이빙 (미대까지)
     path('computer/software/', views.software_department, name='software_department'),
     path('computer/cyber/', views.cyber_department, name='cyber_department'),
+    # main에서 각 페이지
     path('technology/', views.technology_view, name='technology'),
     path('global/', views.global_view, name='global'),
+    path('medi/', views.medi_view, name='medi'),
+    path('art/', views.art_view, name='art'),
+    path('future/', views.future_view, name='future'),
     # technology에서 글씨 선택학과
     path('technology/bio_department/', views.bio_department, name='bio_department'),
     path('technology/itemedia_department/', views.itmedia_department, name='itemedia_department'),
@@ -45,4 +49,17 @@ urlpatterns = [
     path('global/poldiplo_department/', views.poldiplo_department, name='poldiplo_department'),
     path('global/fashion_department/', views.fashion_department, name='fashion_department'),
     path('global/childedu_department/', views.childedu_department, name='childedu_department'),
+    # medi 글씨 선택학과
+    path('medi/medical4_department/', views.medical4_department, name='medical4_department'),
+    path('medi/medical6_department/', views.medical6_department, name='medical6_department'),
+    # art 글씨 선택학과
+    path('art/eastart_department/', views.eastart_department, name='eastart_department'),
+    path('art/westart_department/', views.westart_department, name='westart_department'),
+    path('art/interior_department/', views.interior_department, name='interior_department'),
+    path('art/visual_department/', views.visual_department, name='visual_department'),
+    path('art/textile_department/', views.textile_department, name='textile_department'),
+    # future 글씨 선택학과
+    path('future/koreacul_department/', views.koreacul_department, name='koreacul_department'),
+    path('future/koreaedu_department/', views.koreaedu_department, name='koreaedu_department'),
+
 ]

@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>졸업을 도와조 : 사학전공</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'css/page_global.css' %}" />
+
+    <link rel="stylesheet" href="./css/page_global.css" />
   </head>
   <body>
     <div class="container">
@@ -16,8 +16,8 @@
           <hr />
         </div>
         <div class="logo">
-          <a href="/">
-            <img src="{% static 'image/logo.png' %}" alt="로고" />
+          <a href="#">
+            <img src="image/logo.png" alt="로고" />
           </a>
         </div>
         <div class="center-line">
@@ -35,7 +35,7 @@
           <a href="#">
             <div class="profile">
               <p>MYPAGE</p>
-              <img src="{% static 'image/user.png' %}" alt="프로필" /></div
+              <img src="./image/user.png" alt="프로필" /></div
           ></a>
         </div>
         <div class="right-line">
@@ -58,7 +58,6 @@
               </div>
               <div class="choose">
                 <form action="#" method="POST">
-                  {% csrf_token %}
                   <!-- changeDept -->
                   <select name="major" id="input-dropdown">
                     <option disabled value="">전공을 선택해주세요. ▼</option>
